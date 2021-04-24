@@ -33,7 +33,7 @@ type User struct {
 	Name     string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Email    string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
 	Password string `protobuf:"bytes,4,opt,name=password,proto3" json:"password,omitempty"`
-	Creared  int64  `protobuf:"varint,5,opt,name=creared,proto3" json:"creared,omitempty"`
+	Created  int64  `protobuf:"varint,5,opt,name=created,proto3" json:"created,omitempty"`
 	Updated  int64  `protobuf:"varint,6,opt,name=updated,proto3" json:"updated,omitempty"`
 }
 
@@ -97,9 +97,9 @@ func (x *User) GetPassword() string {
 	return ""
 }
 
-func (x *User) GetCreared() int64 {
+func (x *User) GetCreated() int64 {
 	if x != nil {
-		return x.Creared
+		return x.Created
 	}
 	return 0
 }
@@ -253,8 +253,8 @@ var file_auth_proto_rawDesc = []byte{
 	0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d,
 	0x61, 0x69, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18,
 	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x12,
-	0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x72, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x72, 0x65, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x75, 0x70, 0x64,
+	0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x75, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61,
 	0x74, 0x65, 0x64, 0x22, 0x20, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
@@ -262,21 +262,22 @@ var file_auth_proto_rawDesc = []byte{
 	0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x24, 0x0a, 0x12, 0x44, 0x65, 0x6c,
 	0x65, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x32,
-	0xde, 0x01, 0x0a, 0x0a, 0x41, 0x75, 0x74, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x65, 0x12, 0x1c,
-	0x0a, 0x06, 0x53, 0x69, 0x67, 0x6e, 0x55, 0x70, 0x12, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73,
-	0x65, 0x72, 0x1a, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x27, 0x0a, 0x07,
-	0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x70, 0x62,
-	0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2d, 0x0a, 0x09, 0x4c, 0x69, 0x73, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x73, 0x12, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x55, 0x73, 0x65, 0x72,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73,
-	0x65, 0x72, 0x30, 0x01, 0x12, 0x20, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73,
-	0x65, 0x72, 0x12, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x08, 0x2e, 0x70,
-	0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x38, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
-	0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
-	0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x44, 0x65,
-	0x6c, 0x65, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x42, 0x06, 0x5a, 0x04, 0x2e, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0xdf, 0x01, 0x0a, 0x0b, 0x41, 0x75, 0x74, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
+	0x1c, 0x0a, 0x06, 0x53, 0x69, 0x67, 0x6e, 0x55, 0x70, 0x12, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55,
+	0x73, 0x65, 0x72, 0x1a, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x27, 0x0a,
+	0x07, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65,
+	0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x70,
+	0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x2d, 0x0a, 0x09, 0x4c, 0x69, 0x73, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x73, 0x12, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x55, 0x73, 0x65,
+	0x72, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55,
+	0x73, 0x65, 0x72, 0x30, 0x01, 0x12, 0x20, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55,
+	0x73, 0x65, 0x72, 0x12, 0x08, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x08, 0x2e,
+	0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x38, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x70, 0x62, 0x2e, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x42, 0x06, 0x5a, 0x04, 0x2e, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -299,16 +300,16 @@ var file_auth_proto_goTypes = []interface{}{
 	(*DeleteUserResponse)(nil), // 3: pb.DeleteUserResponse
 }
 var file_auth_proto_depIdxs = []int32{
-	0, // 0: pb.AuthServie.SignUp:input_type -> pb.User
-	1, // 1: pb.AuthServie.GetUser:input_type -> pb.GetUserRequest
-	2, // 2: pb.AuthServie.ListUsers:input_type -> pb.ListUsersRequest
-	0, // 3: pb.AuthServie.UpdateUser:input_type -> pb.User
-	1, // 4: pb.AuthServie.DeleteUser:input_type -> pb.GetUserRequest
-	0, // 5: pb.AuthServie.SignUp:output_type -> pb.User
-	0, // 6: pb.AuthServie.GetUser:output_type -> pb.User
-	0, // 7: pb.AuthServie.ListUsers:output_type -> pb.User
-	0, // 8: pb.AuthServie.UpdateUser:output_type -> pb.User
-	3, // 9: pb.AuthServie.DeleteUser:output_type -> pb.DeleteUserResponse
+	0, // 0: pb.AuthService.SignUp:input_type -> pb.User
+	1, // 1: pb.AuthService.GetUser:input_type -> pb.GetUserRequest
+	2, // 2: pb.AuthService.ListUsers:input_type -> pb.ListUsersRequest
+	0, // 3: pb.AuthService.UpdateUser:input_type -> pb.User
+	1, // 4: pb.AuthService.DeleteUser:input_type -> pb.GetUserRequest
+	0, // 5: pb.AuthService.SignUp:output_type -> pb.User
+	0, // 6: pb.AuthService.GetUser:output_type -> pb.User
+	0, // 7: pb.AuthService.ListUsers:output_type -> pb.User
+	0, // 8: pb.AuthService.UpdateUser:output_type -> pb.User
+	3, // 9: pb.AuthService.DeleteUser:output_type -> pb.DeleteUserResponse
 	5, // [5:10] is the sub-list for method output_type
 	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -399,49 +400,49 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// AuthServieClient is the client API for AuthServie service.
+// AuthServiceClient is the client API for AuthService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AuthServieClient interface {
+type AuthServiceClient interface {
 	SignUp(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*User, error)
-	ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (AuthServie_ListUsersClient, error)
+	ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (AuthService_ListUsersClient, error)
 	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	DeleteUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error)
 }
 
-type authServieClient struct {
+type authServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAuthServieClient(cc grpc.ClientConnInterface) AuthServieClient {
-	return &authServieClient{cc}
+func NewAuthServiceClient(cc grpc.ClientConnInterface) AuthServiceClient {
+	return &authServiceClient{cc}
 }
 
-func (c *authServieClient) SignUp(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
+func (c *authServiceClient) SignUp(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
 	out := new(User)
-	err := c.cc.Invoke(ctx, "/pb.AuthServie/SignUp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.AuthService/SignUp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServieClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*User, error) {
+func (c *authServiceClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*User, error) {
 	out := new(User)
-	err := c.cc.Invoke(ctx, "/pb.AuthServie/GetUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.AuthService/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServieClient) ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (AuthServie_ListUsersClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_AuthServie_serviceDesc.Streams[0], "/pb.AuthServie/ListUsers", opts...)
+func (c *authServiceClient) ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (AuthService_ListUsersClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_AuthService_serviceDesc.Streams[0], "/pb.AuthService/ListUsers", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &authServieListUsersClient{stream}
+	x := &authServiceListUsersClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -451,16 +452,16 @@ func (c *authServieClient) ListUsers(ctx context.Context, in *ListUsersRequest, 
 	return x, nil
 }
 
-type AuthServie_ListUsersClient interface {
+type AuthService_ListUsersClient interface {
 	Recv() (*User, error)
 	grpc.ClientStream
 }
 
-type authServieListUsersClient struct {
+type authServiceListUsersClient struct {
 	grpc.ClientStream
 }
 
-func (x *authServieListUsersClient) Recv() (*User, error) {
+func (x *authServiceListUsersClient) Recv() (*User, error) {
 	m := new(User)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -468,175 +469,175 @@ func (x *authServieListUsersClient) Recv() (*User, error) {
 	return m, nil
 }
 
-func (c *authServieClient) UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
+func (c *authServiceClient) UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
 	out := new(User)
-	err := c.cc.Invoke(ctx, "/pb.AuthServie/UpdateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.AuthService/UpdateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServieClient) DeleteUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
+func (c *authServiceClient) DeleteUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*DeleteUserResponse, error) {
 	out := new(DeleteUserResponse)
-	err := c.cc.Invoke(ctx, "/pb.AuthServie/DeleteUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.AuthService/DeleteUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AuthServieServer is the server API for AuthServie service.
-type AuthServieServer interface {
+// AuthServiceServer is the server API for AuthService service.
+type AuthServiceServer interface {
 	SignUp(context.Context, *User) (*User, error)
 	GetUser(context.Context, *GetUserRequest) (*User, error)
-	ListUsers(*ListUsersRequest, AuthServie_ListUsersServer) error
+	ListUsers(*ListUsersRequest, AuthService_ListUsersServer) error
 	UpdateUser(context.Context, *User) (*User, error)
 	DeleteUser(context.Context, *GetUserRequest) (*DeleteUserResponse, error)
 }
 
-// UnimplementedAuthServieServer can be embedded to have forward compatible implementations.
-type UnimplementedAuthServieServer struct {
+// UnimplementedAuthServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedAuthServiceServer struct {
 }
 
-func (*UnimplementedAuthServieServer) SignUp(context.Context, *User) (*User, error) {
+func (*UnimplementedAuthServiceServer) SignUp(context.Context, *User) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SignUp not implemented")
 }
-func (*UnimplementedAuthServieServer) GetUser(context.Context, *GetUserRequest) (*User, error) {
+func (*UnimplementedAuthServiceServer) GetUser(context.Context, *GetUserRequest) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
-func (*UnimplementedAuthServieServer) ListUsers(*ListUsersRequest, AuthServie_ListUsersServer) error {
+func (*UnimplementedAuthServiceServer) ListUsers(*ListUsersRequest, AuthService_ListUsersServer) error {
 	return status.Errorf(codes.Unimplemented, "method ListUsers not implemented")
 }
-func (*UnimplementedAuthServieServer) UpdateUser(context.Context, *User) (*User, error) {
+func (*UnimplementedAuthServiceServer) UpdateUser(context.Context, *User) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
-func (*UnimplementedAuthServieServer) DeleteUser(context.Context, *GetUserRequest) (*DeleteUserResponse, error) {
+func (*UnimplementedAuthServiceServer) DeleteUser(context.Context, *GetUserRequest) (*DeleteUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
 
-func RegisterAuthServieServer(s *grpc.Server, srv AuthServieServer) {
-	s.RegisterService(&_AuthServie_serviceDesc, srv)
+func RegisterAuthServiceServer(s *grpc.Server, srv AuthServiceServer) {
+	s.RegisterService(&_AuthService_serviceDesc, srv)
 }
 
-func _AuthServie_SignUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_SignUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServieServer).SignUp(ctx, in)
+		return srv.(AuthServiceServer).SignUp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.AuthServie/SignUp",
+		FullMethod: "/pb.AuthService/SignUp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServieServer).SignUp(ctx, req.(*User))
+		return srv.(AuthServiceServer).SignUp(ctx, req.(*User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthServie_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServieServer).GetUser(ctx, in)
+		return srv.(AuthServiceServer).GetUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.AuthServie/GetUser",
+		FullMethod: "/pb.AuthService/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServieServer).GetUser(ctx, req.(*GetUserRequest))
+		return srv.(AuthServiceServer).GetUser(ctx, req.(*GetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthServie_ListUsers_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _AuthService_ListUsers_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ListUsersRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(AuthServieServer).ListUsers(m, &authServieListUsersServer{stream})
+	return srv.(AuthServiceServer).ListUsers(m, &authServiceListUsersServer{stream})
 }
 
-type AuthServie_ListUsersServer interface {
+type AuthService_ListUsersServer interface {
 	Send(*User) error
 	grpc.ServerStream
 }
 
-type authServieListUsersServer struct {
+type authServiceListUsersServer struct {
 	grpc.ServerStream
 }
 
-func (x *authServieListUsersServer) Send(m *User) error {
+func (x *authServiceListUsersServer) Send(m *User) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _AuthServie_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServieServer).UpdateUser(ctx, in)
+		return srv.(AuthServiceServer).UpdateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.AuthServie/UpdateUser",
+		FullMethod: "/pb.AuthService/UpdateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServieServer).UpdateUser(ctx, req.(*User))
+		return srv.(AuthServiceServer).UpdateUser(ctx, req.(*User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthServie_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServieServer).DeleteUser(ctx, in)
+		return srv.(AuthServiceServer).DeleteUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.AuthServie/DeleteUser",
+		FullMethod: "/pb.AuthService/DeleteUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServieServer).DeleteUser(ctx, req.(*GetUserRequest))
+		return srv.(AuthServiceServer).DeleteUser(ctx, req.(*GetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _AuthServie_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.AuthServie",
-	HandlerType: (*AuthServieServer)(nil),
+var _AuthService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.AuthService",
+	HandlerType: (*AuthServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SignUp",
-			Handler:    _AuthServie_SignUp_Handler,
+			Handler:    _AuthService_SignUp_Handler,
 		},
 		{
 			MethodName: "GetUser",
-			Handler:    _AuthServie_GetUser_Handler,
+			Handler:    _AuthService_GetUser_Handler,
 		},
 		{
 			MethodName: "UpdateUser",
-			Handler:    _AuthServie_UpdateUser_Handler,
+			Handler:    _AuthService_UpdateUser_Handler,
 		},
 		{
 			MethodName: "DeleteUser",
-			Handler:    _AuthServie_DeleteUser_Handler,
+			Handler:    _AuthService_DeleteUser_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "ListUsers",
-			Handler:       _AuthServie_ListUsers_Handler,
+			Handler:       _AuthService_ListUsers_Handler,
 			ServerStreams: true,
 		},
 	},
