@@ -97,14 +97,13 @@ func (h *authHandlers) GetUser(w http.ResponseWriter, r *http.Request) {
 func (h *authHandlers) GetUsers(w http.ResponseWriter, r *http.Request) {
 	stream, err := h.authSvcClient.ListUsers(r.Context(), &pb.ListUsersRequest{})
 	if err != nil {
-		restutil.WriteError(w, http.StatusBadRequest, err)
+		restutil.WriteError(w, http.StatusUnprocessableEntity, err)
 		return
 	}
 	var users []*pb.User
-
 	for {
 		user, err := stream.Recv()
-		if err != io.EOF {
+		if err == io.EOF {
 			break
 		}
 		if err != nil {
