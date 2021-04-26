@@ -3,7 +3,10 @@ package security
 import (
 	"errors"
 	"fmt"
+	"log"
+	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -30,6 +33,17 @@ func parseJwtCallback(token *jwt.Token) (interface{}, error) {
 		return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 	}
 	return jwtSecretKey, nil
+}
+
+func ExtractToken(r *http.Request) (string, error) {
+	// Authoriaton => Bearer Token...
+	header := strings.TrimSpace(r.Header.Get("Authorization"))
+	splitted := strings.Split(header, " ")
+	if len(splitted) != 2 {
+		log.Println("error on extract token from header:", header)
+		return "", ErrInvalidToken
+	}
+	return splitted[1], nil
 }
 
 func ParseToken(tokenString string) (*jwt.Token, error) {
